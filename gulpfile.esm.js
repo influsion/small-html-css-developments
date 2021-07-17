@@ -17,7 +17,10 @@ export function clean() {
 }
 
 export function scss() {
-  return src('./src/scss/main.scss', {
+  return src([
+      './src/scss/main.scss',
+      '!./src/scss/**/__user-template.scss',
+    ], {
       allowEmpty: true,
     })
     .pipe(sass().on('error', sass.logError))
@@ -26,7 +29,10 @@ export function scss() {
 }
 
 export function html() {
-  return src('./src/html/**/*.html')
+  return src([
+      './src/html/**/*.html',
+      '!./src/html/**/__user-template.html',
+    ])
     .pipe(dest('./dist'));
 }
 
@@ -47,6 +53,8 @@ export const watching = function() {
     './src/scss/**/*.scss',
     './src/html/**/*.html',
     './src/images/**/*.+(jpg|png|svg|gif)',
+    '!./src/scss/**/__user-template.scss',
+    '!./src/html/**/__user-template.html',
   ], build);
 };
 
