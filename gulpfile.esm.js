@@ -23,10 +23,13 @@ export function scss() {
       '!./src/scss/**/__user-template.scss',
     ], {
       allowEmpty: true,
+      sourcemaps: true,
     })
     .pipe(sass().on('error', sass.logError))
     .pipe(rename('styles.css'))
-    .pipe(dest('./dist/css'));
+    .pipe(dest('./dist/css', {
+      sourcemaps: '.',
+    }));
 }
 
 export function html() {
