@@ -9,6 +9,7 @@ import rename from 'gulp-rename';
 import del from 'del';
 
 const sass = require('gulp-sass')(require('sass'));
+const browserSync = require('browser-sync').create();
 
 export function clean() {
   return del([
@@ -46,6 +47,23 @@ export function test(cb) {
   cb();
 }
 
+function browserSyncServe(cb) {
+  browserSync.init({
+    server: {
+      baseDir: './dist/',
+    },
+    port: 5001,
+  });
+
+  cb();
+}
+
+function browserSyncReload(cb) {
+  browserSync.reload();
+
+  cb();
+}
+
 export const build = series(clean, parallel(scss, html, images));
 
 export const watching = function() {
@@ -55,9 +73,9 @@ export const watching = function() {
     './src/images/**/*.+(jpg|png|svg|gif)',
     '!./src/scss/**/__user-template.scss',
     '!./src/html/**/__user-template.html',
-  ], build);
+  ], series(build, browserSyncReload));
 };
 
-export const dev = parallel(watching, build);
+export const dev = parallel(browserSyncServe, watching, build);
 
 export default test;
