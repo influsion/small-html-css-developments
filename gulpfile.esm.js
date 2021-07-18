@@ -79,6 +79,6 @@ export const watching = function() {
   ], series(build, browserSyncReload));
 };
 
-export const dev = parallel(browserSyncServe, watching, build);
+export const dev = parallel(series(build, browserSyncServe), watching);
 
 export default test;
