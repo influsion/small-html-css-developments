@@ -17,6 +17,20 @@ export function clean() {
   ]);
 }
 
+export function technicalStyles() {
+  return src([
+      './src/technical-styles/main.scss',
+    ], {
+      allowEmpty: true,
+      sourcemaps: true,
+    })
+    .pipe(sass().on('error', sass.logError))
+    .pipe(rename('technical-styles.css'))
+    .pipe(dest('./dist/css', {
+      sourcemaps: '.',
+    }));
+}
+
 export function scss() {
   return src([
       './src/scss/main.scss',
@@ -67,13 +81,14 @@ function browserSyncReload(cb) {
   cb();
 }
 
-export const build = series(clean, parallel(scss, html, images));
+export const build = series(clean, parallel(scss, html, images, technicalStyles));
 
 export const watching = function() {
   watch([
     './src/scss/**/*.scss',
     './src/html/**/*.html',
     './src/images/**/*.+(jpg|png|svg|gif)',
+    './src/technical-styles/**/*.scss',
     '!./src/scss/**/__user-template.scss',
     '!./src/html/**/__user-template.html',
   ], series(build, browserSyncReload));

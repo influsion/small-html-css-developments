@@ -1,0 +1,25 @@
+.t-wrapper {
+  display: block;
+  padding: 20px;
+  margin: 0 auto;
+
+  &__inner {
+    display: block;
+  }
+
+  &.small {
+    max-width: 360px;
+  }
+
+  &.default {
+    max-width: 560px;
+  }
+
+  &.large {
+    max-width: 768px;
+  }
+
+  &.x-large {
+    max-width: 992px;
+  }
+}
