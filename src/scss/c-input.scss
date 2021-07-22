@@ -1,0 +1,231 @@
+/* .c-input
+-----------------------------------------------------------*/
+$r: ".c-input";
+
+// block
+//-----------------------------------------------------------
+#{$r} {
+  display: grid;
+  position: relative;
+
+  // element
+  //---------------------------------------------------------
+  &__label {
+    display: grid;
+    position: relative;
+  }
+
+  &__type {
+    width: 100%;
+    padding: 0 2rem;
+    min-height: 5rem;
+    transition: 0.15s;
+    background-color: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--border-radius);
+
+    [contenteditable] {
+      cursor: text;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    &::placeholder {
+      color: var(--placeholder);
+    }
+
+    &:focus ~ #{$r}__title,
+    &:not(:placeholder-shown) ~ #{$r}__title {
+      left: 1rem;
+      line-height: inherit;
+      background-color: var(--white);
+      transform: scale(0.84) translateY(-50%);
+    }
+
+    &:focus ~ #{$r}__title {
+      color: var(--theme-color);
+    }
+
+    &:focus {
+      border-color: var(--theme-color);
+      box-shadow: 0 0 0 1px var(--theme-color);
+    }
+  }
+
+  &__title {
+    top: 0;
+    left: 1rem;
+    cursor: text;
+    overflow: hidden;
+    line-height: 5rem;
+    width: max-content;
+    position: absolute;
+    white-space: nowrap;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-overflow: ellipsis;
+    transform-origin: top left;
+    max-width: calc(100% - 2rem);
+    transition: transform 0.15s, background-color 0.15s;
+  }
+
+  &__icon {
+    display: grid;
+    place-items: center;
+    top: 0;
+    width: 5rem;
+    height: 5rem;
+    font-size: 2rem;
+    position: absolute;
+    transition: color 0.3s;
+    color: var(--gray-400);
+
+    &--left {
+      left: 0;
+      pointer-events: none;
+
+      ~ #{$r}__type,
+      ~ [contenteditable] {
+        padding-left: 5rem;
+      }
+
+      ~ #{$r}__title {
+        left: 4rem;
+        max-width: calc(100% - 5rem);
+      }
+
+      ~ #{$r}__icon--right ~ #{$r}__title {
+        max-width: calc(100% - 8rem);
+      }
+    }
+
+    &--right {
+      right: 0;
+
+      ~ #{$r}__type,
+      ~ [contenteditable] {
+        padding-right: 5rem;
+      }
+
+      ~ #{$r}__title {
+        right: 4rem;
+        max-width: calc(100% - 5rem);
+      }
+    }
+  }
+
+  &__message {
+    display: none;
+    transform: scale(0.84);
+    transform-origin: top left;
+  }
+
+  // modifier
+  //---------------------------------------------------------
+  &--validation {
+
+     #{$r}__message {
+      order: 1;
+      display: block;
+      margin-top: 1rem;
+
+      &--error {
+        color: var(--form-error);
+
+        ~  #{$r}__label {
+
+          #{$r}__type {
+            border-color: var(--form-error);
+            box-shadow: 0 0 0 1px var(--form-error);
+          }
+
+          #{$r}__title {
+            color: var(--form-error);
+          }
+        }
+      }
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+
+    #{$r}__label {
+      pointer-events: none;
+      color: var(--form-disabled);
+      border-color: var(--form-disabled);
+    }
+
+    #{$r}__icon {
+      color: var(--form-disabled);
+    }
+  }
+
+  &--readonly {
+    pointer-events: none;
+  }
+
+  &--password {
+
+    #{$r}__label {
+
+      &:focus-within {
+
+        #{$r}__icon--right {
+          color: var(--theme-color);
+        }
+      }
+    }
+
+    #{$r}__type {
+      font-size: 2rem;
+      letter-spacing: 0.5rem;
+      transition: font-family 0s;
+      font-family: var(--font-family-password);
+    }
+
+    #{$r}__icon--right:hover {
+      cursor: pointer;
+      color: var(--theme-color);
+
+      ~ #{$r}__type {
+        font-size: inherit;
+        font-family: inherit;
+        letter-spacing: 0.1rem;
+      }
+    }
+  }
+
+  &--regular {
+
+    #{$r}__type {
+
+      &:focus ~ #{$r}__title,
+      &:not(:placeholder-shown) ~ #{$r}__title {
+        color: inherit;
+        transform: none;
+        background-color: rgba(0,0,0,0);
+      }
+    }
+
+    #{$r}__title {
+      order: -1;
+      padding: 0;
+      width: auto;
+      color: inherit;
+      max-width: 100%;
+      cursor: pointer;
+      position: static;
+      margin-bottom: 1rem;
+      line-height: inherit;
+    }
+
+    #{$r}__icon {
+      top: auto;
+      bottom: 0;
+    }
+  }
+}
+
+// influence
+//-----------------------------------------------------------
