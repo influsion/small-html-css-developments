@@ -1,0 +1,21 @@
+.t-wrapper {
+  display: block;
+  padding: 20px;
+  margin: 0 auto;
+}
+.t-wrapper__inner {
+  display: block;
+}
+.t-wrapper.small {
+  max-width: 360px;
+}
+.t-wrapper.default {
+  max-width: 560px;
+}
+.t-wrapper.large {
+  max-width: 768px;
+}
+.t-wrapper.x-large {
+  max-width: 992px;
+}
+/*# sourceMappingURL=technical-styles.css.map */
