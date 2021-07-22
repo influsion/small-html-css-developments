@@ -8,6 +8,7 @@
     "dev": "gulp dev",
     "build": "gulp build",
     "clean": "gulp clean",
+    "deploy": "gh-pages -d dist",
     "test": "gulp"
   },
   "repository": {
@@ -19,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/influsion/small-html-css-developments/issues"
   },
-  "homepage": "https://github.com/influsion/small-html-css-developments#readme",
+  "homepage": "https://influsion.github.io/small-html-css-developments",
   "devDependencies": {
     "browser-sync": "^2.27.4",
     "del": "^6.0.0",
@@ -30,6 +31,7 @@
     "sass": "^1.35.2"
   },
   "dependencies": {
-    "esm": "^3.2.25"
+    "esm": "^3.2.25",
+    "gh-pages": "^3.2.3"
   }
 }
