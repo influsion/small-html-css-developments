@@ -1,0 +1,16 @@
+@mixin mixin-container {
+  width: 100%;
+  margin: 0 auto;
+
+  @media (max-width: $max-1199) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: calc(var(--container-width) + 4rem);
+  }
+
+  @media (min-width: $min-1200) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    max-width: calc(var(--container-width) + 8rem);
+  }
+}
