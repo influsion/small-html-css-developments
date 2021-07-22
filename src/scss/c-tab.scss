@@ -1,0 +1,89 @@
+/* .c-
+-----------------------------------------------------------*/
+$r: ".c-tab";
+
+// block
+//-----------------------------------------------------------
+#{$r} {
+
+  // element
+  //---------------------------------------------------------
+
+  &__input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    position: absolute;
+  }
+
+  &__labels {
+    display: flex;
+    font-size: 2rem;
+    margin-bottom: -1px;
+  }
+
+  &__label {
+    display: grid;
+    place-items: center;
+    grid-column-gap: 1rem;
+    opacity: 0.45;
+    cursor: pointer;
+    min-height: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 1px solid var(--gray-100);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
+    & + & {
+      margin-left: -1px;
+    }
+  }
+
+  &__items {
+    border: 1px solid var(--gray-100);
+    border-radius: 0 var(--border-radius) var(--border-radius) var(--border-radius);
+  }
+
+  &__item {
+    display: none;
+    padding: 1rem;
+  }
+
+  $max-number-of-tabs: 10;
+  @for $i from 1 to $max-number-of-tabs + 1 {
+    & > &__input:nth-child(#{$i}):checked ~ &__labels &__label:nth-child(#{$i}),
+    & > &__input:nth-child(#{$i}):focus ~ &__labels &__label:nth-child(#{$i}) {
+      opacity: 1;
+    }
+
+    & > &__input:nth-child(#{$i}):checked ~ &__items &__item:nth-child(#{$i}),
+    & > &__input:nth-child(#{$i}):focus ~ &__items &__item:nth-child(#{$i}){
+      display: block;
+    }
+  }
+
+
+  // modifier
+  //---------------------------------------------------------
+
+  &--flex-tabs {
+    #{$r}__label {
+      flex-grow: 1;
+    }
+  }
+
+  &--equal-width-tabs {
+    #{$r}__label {
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+  }
+}
+
+// influence
+//-----------------------------------------------------------
