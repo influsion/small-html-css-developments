@@ -40,10 +40,14 @@ html {
   overflow: hidden;
   text-size-adjust: none;
   font-size: 8px;
+  height: 100%;
 }
 
 body {
   margin: 0;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
 }
 
 img {
@@ -392,5 +396,83 @@ textarea {
 .c-input--regular .c-input__icon {
   top: auto;
   bottom: 0;
+}
+
+/* .c-
+-----------------------------------------------------------*/
+.c-popup__input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  position: absolute;
+}
+.c-popup__input--open:checked ~ .c-popup__container {
+  display: flex;
+}
+.c-popup__input--close:checked ~ .c-popup__container {
+  display: none;
+}
+.c-popup__overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  display: block;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+.c-popup__container {
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  padding: 3rem;
+  display: none;
+  position: fixed;
+}
+.c-popup__body {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  width: 100%;
+  max-height: 100%;
+  max-width: 768px;
+  min-height: 10rem;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: var(--border-radius);
+}
+.c-popup__header {
+  padding: 3rem 4rem;
+}
+.c-popup__inner {
+  flex-grow: 1;
+  width: 100%;
+  padding: 0 4rem;
+  overflow-y: auto;
+  max-height: 100%;
+  overflow-x: hidden;
+}
+.c-popup__footer {
+  padding: 3rem 4rem;
+}
+.c-popup__title {
+  font-size: 3rem;
+  font-weight: 400;
+}
+.c-popup__close {
+  top: 2rem;
+  z-index: 1;
+  width: 1em;
+  height: 1em;
+  right: 2rem;
+  display: block;
+  cursor: pointer;
+  font-size: 2rem;
+  position: absolute;
 }
 /*# sourceMappingURL=styles.css.map */
