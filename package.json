@@ -9,6 +9,7 @@
     "build": "gulp build",
     "clean": "gulp clean",
     "deploy": "gh-pages -d dist && echo Website: https://influsion.github.io/small-html-css-developments",
+    "publish": "npm run build && npm run deploy",
     "test": "gulp"
   },
   "repository": {
