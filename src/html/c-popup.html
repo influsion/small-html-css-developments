@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./css/technical-styles.css">
 </head>
 <body class="l-body">
-  <label for="c-popup-1">Open popup</label>
+  <label for="c-popup-1"><b>Open popup 1</b></label>, <label for="c-popup-2"><b>Open popup 2</b></label>
   <div class="test">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin, nisi ac sodales vestibulum, ipsum ex tempus ex, non consectetur elit mi in leo. Duis eget mauris at erat ultricies porttitor. Duis hendrerit sed tellus at scelerisque. Vestibulum in ligula ut lectus accumsan rutrum. Donec feugiat, ipsum eu facilisis volutpat, velit quam finibus mi, eu faucibus nulla mi quis mauris. Suspendisse scelerisque vitae leo dignissim porttitor. Integer et malesuada sapien, eu elementum sapien. Sed consectetur neque nec sem hendrerit interdum. Nunc sit amet sollicitudin arcu, non feugiat libero. Nulla nec maximus nibh.</p>
     <p>Morbi fringilla nisl erat, quis sodales lectus malesuada in. Cras euismod dignissim justo ac egestas. Nulla facilisi. Sed dictum sed tortor eu tempor. Sed porta pulvinar metus vitae semper. Proin sed enim vel justo luctus venenatis in et lorem. Pellentesque auctor porta leo lacinia euismod. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
@@ -39,113 +39,160 @@
     <p>Phasellus tincidunt nisi id velit consectetur, id luctus quam accumsan. In efficitur elit in molestie lacinia. Ut placerat urna eget erat pulvinar, vitae finibus nulla ultricies. Fusce a laoreet velit, eu tristique quam. Ut id arcu viverra, auctor quam quis, molestie nunc. Praesent ullamcorper mauris odio. Praesent leo risus, elementum vel eleifend blandit, iaculis quis justo. Fusce nec metus metus. Nulla id scelerisque neque. Phasellus ultrices lobortis elit quis iaculis. In vitae dolor diam.</p>
   </div>
 
-  <div class="c-popup">
-    <input class="c-popup__input c-popup__input--open" type="radio" name="c-popup" id="c-popup-1">
-    <input class="c-popup__input c-popup__input--close" type="radio" name="c-popup" id="c-popup-2">
+  <div class="c-popup _c-popup--external-scroll">
+    <input class="c-popup__input" type="checkbox" name="c-popup" id="c-popup-1">
 
-    <div class="c-popup__container">
-      <label for="c-popup-2" class="c-popup__overlay"></label>
+    <div class="c-popup__self">
+      <div class="c-popup__container">
+        <label for="c-popup-1" class="c-popup__overlay"></label>
 
-      <div class="c-popup__body">
-        <div class="c-popup__header">
-          <div class="c-popup__title">
-            Some Title
+        <div class="c-popup__body">
+          <div class="c-popup__header">
+            <div class="c-popup__title">
+              Some Title
+            </div>
+
+            <label for="c-popup-1" class="c-popup__close">
+              <?xml version="1.0" encoding="iso-8859-1"?>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 357 357">
+                <path d="M357 35.7L321.3 0 178.5 142.8 35.7 0 0 35.7l142.8 142.8L0 321.3 35.7 357l142.8-142.8L321.3 357l35.7-35.7-142.8-142.8z"/>
+              </svg>
+            </label>
           </div>
 
-          <label for="c-popup-2" class="c-popup__close">
-            <?xml version="1.0" encoding="iso-8859-1"?>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 357 357">
-              <path d="M357 35.7L321.3 0 178.5 142.8 35.7 0 0 35.7l142.8 142.8L0 321.3 35.7 357l142.8-142.8L321.3 357l35.7-35.7-142.8-142.8z"/>
-            </svg>
-          </label>
+          <div class="c-popup__inner">
+            <p>Morbi laoreet purus ex, iaculis tincidunt sapien porta vitae. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla a metus at enim viverra dictum vel vel eros. Pellentesque ultrices mauris ligula, sit amet efficitur libero commodo eget. Vivamus eros quam, consectetur condimentum placerat id, ultricies nec neque. Cras bibendum ex faucibus sapien sagittis condimentum. Morbi non lectus quis velit commodo lacinia. Cras magna lectus, fringilla id commodo quis, vestibulum in leo. Donec posuere, lorem vitae iaculis luctus, elit libero suscipit purus, ut faucibus nisi leo et tortor. Praesent laoreet tortor ex, et euismod nulla ultricies eu. Nam at velit imperdiet, tincidunt ligula faucibus, malesuada justo.</p>
+
+            <div class="c-tab _c-tab--flex-tabs _c-tab--equal-width-tabs">
+              <input id="c-tab-1-1" class="c-tab__input" name="c-tab-1" type="radio" checked="checked">
+              <input id="c-tab-1-2" class="c-tab__input" name="c-tab-1" type="radio">
+              <input id="c-tab-1-3" class="c-tab__input" name="c-tab-1" type="radio">
+
+              <div class="c-tab__labels">
+                <label for="c-tab-1-1" class="c-tab__label">Tab 1</label>
+                <label for="c-tab-1-2" class="c-tab__label">Tab 2</label>
+                <label for="c-tab-1-3" class="c-tab__label">Tab 3</label>
+              </div>
+
+              <div class="c-tab__items">
+                <div class="c-tab__item">
+                  <p>Vestibulum fermentum ipsum eget lectus vulputate, ut sodales velit auctor. Donec vel justo arcu. Morbi interdum nisi quis ipsum scelerisque egestas. Vivamus quis lorem fermentum, suscipit eros at, tempus ligula. Integer non vulputate nibh. In hac habitasse platea dictumst. Aliquam quis lacinia ex.</p>
+                </div>
+                <div class="c-tab__item">
+                  <p>Vivamus pretium nunc magna, sit amet imperdiet felis elementum non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin leo lectus, auctor vitae rutrum vitae, iaculis eleifend justo. Suspendisse sodales eleifend leo. Phasellus ex tellus, convallis sed luctus a, tempus aliquam velit. Sed nec velit felis. In eu mi at erat dictum finibus. Fusce vel dolor massa. Proin congue eget nunc at rutrum. Aliquam pulvinar molestie bibendum. Duis malesuada metus vitae nulla pulvinar vestibulum.</p>
+                </div>
+                <div class="c-tab__item">
+                  <p>Cras nec diam vel libero consectetur tincidunt. Aenean aliquam quis eros viverra elementum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque auctor lobortis felis lobortis suscipit. Vestibulum volutpat aliquam elit, in tincidunt quam eleifend ut. Maecenas finibus lacus sed semper molestie. Proin varius tortor eros, vitae elementum risus semper eget. Proin eu ornare diam, vitae laoreet tortor. Sed est ante, sagittis ac venenatis ac, mollis nec dolor. In convallis placerat erat, sodales rutrum est ornare mattis. Donec venenatis urna est, nec elementum justo convallis id.</p>
+                </div>
+              </div>
+            </div>
+
+            <p>Cras semper erat ut blandit fermentum. Integer sit amet neque lorem. Cras ex nisi, dictum sit amet iaculis ac, feugiat vitae justo. In mattis finibus neque eget blandit. Morbi ultricies pharetra elit, eget semper augue auctor eget. In at tortor odio. Fusce quis mi cursus, rhoncus lectus vel, tristique sapien. Phasellus ornare ac purus non ullamcorper. Mauris ut lacus elementum, egestas tellus in, molestie est. Sed eu felis justo. Aenean id velit iaculis massa tempus semper eget vitae risus.</p>
+
+            <div class="c-tab _c-tab--flex-tabs _c-tab--equal-width-tabs">
+              <input id="c-tab-2-1" class="c-tab__input" name="c-tab-2" type="radio" checked="checked">
+              <input id="c-tab-2-2" class="c-tab__input" name="c-tab-2" type="radio">
+              <input id="c-tab-2-3" class="c-tab__input" name="c-tab-2" type="radio">
+
+              <div class="c-tab__labels">
+                <label for="c-tab-2-1" class="c-tab__label">Tab 1</label>
+                <label for="c-tab-2-2" class="c-tab__label">Tab 2</label>
+                <label for="c-tab-2-3" class="c-tab__label">Tab 3</label>
+              </div>
+
+              <div class="c-tab__items">
+                <div class="c-tab__item">
+                  <p>Phasellus ultrices ullamcorper dui, eu vehicula nisi lacinia at. Fusce tempor turpis ut porta suscipit. Morbi consequat, metus sed vestibulum tempor, augue erat pharetra libero, sed vulputate velit risus sit amet purus. Nunc vel lectus eu velit bibendum convallis. Maecenas auctor lacinia ipsum, aliquam finibus augue laoreet nec. Pellentesque venenatis tempor lacus, quis lacinia orci convallis vitae. Donec vel libero non mauris auctor mattis. Etiam in convallis elit. Nam libero arcu, euismod id rutrum quis, sollicitudin vel dolor. Aliquam sem velit, faucibus et neque nec, sollicitudin pulvinar dolor. Sed et massa ac quam eleifend convallis facilisis sit amet enim. Pellentesque scelerisque porttitor ligula, sit amet consectetur sapien cursus a.</p>
+                  <p>Morbi laoreet purus ex, iaculis tincidunt sapien porta vitae. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla a metus at enim viverra dictum vel vel eros. Pellentesque ultrices mauris ligula, sit amet efficitur libero commodo eget. Vivamus eros quam, consectetur condimentum placerat id, ultricies nec neque. Cras bibendum ex faucibus sapien sagittis condimentum. Morbi non lectus quis velit commodo lacinia. Cras magna lectus, fringilla id commodo quis, vestibulum in leo. Donec posuere, lorem vitae iaculis luctus, elit libero suscipit purus, ut faucibus nisi leo et tortor. Praesent laoreet tortor ex, et euismod nulla ultricies eu. Nam at velit imperdiet, tincidunt ligula faucibus, malesuada justo.</p>
+                </div>
+                <div class="c-tab__item">
+                  <p>Proin pellentesque venenatis massa, at varius erat tempor at. In ultricies id risus eget pulvinar. Donec in placerat libero. Vestibulum blandit in magna mollis tincidunt. Ut porta, ipsum nec mattis molestie, neque quam scelerisque ante, nec sodales quam purus a urna. Ut a tempus tortor, a convallis erat. Fusce a lorem ligula. Suspendisse interdum dolor vel gravida elementum. Nam scelerisque sapien facilisis diam maximus, ut tempus nisi ullamcorper. Curabitur eu mi ac mauris tristique scelerisque. Fusce dictum tortor sit amet tellus eleifend, quis vehicula justo imperdiet. Suspendisse ultricies dolor id metus congue, hendrerit elementum urna vestibulum. Donec auctor lacinia tellus in tristique.</p>
+                  <p>Cras semper erat ut blandit fermentum. Integer sit amet neque lorem. Cras ex nisi, dictum sit amet iaculis ac, feugiat vitae justo. In mattis finibus neque eget blandit. Morbi ultricies pharetra elit, eget semper augue auctor eget. In at tortor odio. Fusce quis mi cursus, rhoncus lectus vel, tristique sapien. Phasellus ornare ac purus non ullamcorper. Mauris ut lacus elementum, egestas tellus in, molestie est. Sed eu felis justo. Aenean id velit iaculis massa tempus semper eget vitae risus.</p>
+                </div>
+                <div class="c-tab__item">
+                  <p>Ut sed nulla sodales, vestibulum tellus et, interdum lorem. Nullam fringilla dictum ex in laoreet. Phasellus id sodales neque, sit amet tristique libero. Curabitur vulputate rhoncus vestibulum. Donec placerat elit ex. Donec ac tortor sit amet purus porta hendrerit quis vel purus. In finibus rhoncus arcu, eu auctor ante consectetur at. Sed pulvinar purus quis accumsan vulputate. Suspendisse aliquet purus faucibus metus sagittis dignissim vitae quis nisi. Sed velit magna, lacinia sed felis eu, pulvinar sodales odio. Sed molestie sapien vitae posuere convallis. Sed semper ante eu tellus hendrerit ullamcorper. Quisque nulla justo, egestas non dui vel, lobortis sollicitudin turpis.</p>
+                  <p>Integer congue ut elit varius eleifend. Cras finibus, ipsum pulvinar feugiat commodo, ex purus tempor erat, et lobortis diam odio quis velit. Vivamus fermentum molestie quam, non consequat nibh elementum quis. Donec vel mollis dui. Integer sed feugiat lacus. Sed fermentum vulputate sem ut tincidunt. Phasellus venenatis sagittis velit, at convallis odio tincidunt eu. Mauris nec ipsum ac erat scelerisque auctor. Sed vel eros ex.</p>
+                </div>
+              </div>
+            </div>
+
+            <p>Nam volutpat tellus in pretium lobortis. Nam eget lacinia tellus, eu feugiat quam. Maecenas eget finibus nisl. Vestibulum laoreet egestas libero quis mollis. Nam sit amet sagittis risus. Nulla congue volutpat est et eleifend. Vestibulum mattis augue eu odio rhoncus posuere. Phasellus sed magna ac ligula euismod rutrum. Sed nec erat efficitur, auctor nisi quis, tincidunt mi. Aliquam sit amet iaculis sem. Maecenas pulvinar est sem, nec cursus tellus ultricies at. Sed imperdiet dolor ex, vitae rutrum neque aliquet at.</p>
+
+            <div class="c-tab _c-tab--flex-tabs _c-tab--equal-width-tabs">
+              <input id="c-tab-3-1" class="c-tab__input" name="c-tab-3" type="radio" checked="checked">
+              <input id="c-tab-3-2" class="c-tab__input" name="c-tab-3" type="radio">
+              <input id="c-tab-3-3" class="c-tab__input" name="c-tab-3" type="radio">
+
+              <div class="c-tab__labels">
+                <label for="c-tab-3-1" class="c-tab__label">Tab 1</label>
+                <label for="c-tab-3-2" class="c-tab__label">Tab 2</label>
+                <label for="c-tab-3-3" class="c-tab__label">Tab 3</label>
+              </div>
+
+              <div class="c-tab__items">
+                <div class="c-tab__item">
+                  <p>Ut suscipit dui eu fringilla gravida. Phasellus sollicitudin consectetur lacus, a luctus ex iaculis vel. Integer non fringilla augue. Sed accumsan arcu ac arcu maximus tristique. Quisque vitae massa eu elit tristique tincidunt non a nisi. Nulla porta tempor quam, eget vehicula lectus venenatis id. Nulla eget euismod augue.</p>
+                  <p>Nam volutpat tellus in pretium lobortis. Nam eget lacinia tellus, eu feugiat quam. Maecenas eget finibus nisl. Vestibulum laoreet egestas libero quis mollis. Nam sit amet sagittis risus. Nulla congue volutpat est et eleifend. Vestibulum mattis augue eu odio rhoncus posuere. Phasellus sed magna ac ligula euismod rutrum. Sed nec erat efficitur, auctor nisi quis, tincidunt mi. Aliquam sit amet iaculis sem. Maecenas pulvinar est sem, nec cursus tellus ultricies at. Sed imperdiet dolor ex, vitae rutrum neque aliquet at.</p>
+                </div>
+                <div class="c-tab__item">
+                  <p>Maecenas ex est, pharetra eu nisi porta, malesuada euismod ex. Cras euismod sapien felis, vel imperdiet orci congue in. Aenean leo ipsum, mollis sit amet diam non, viverra elementum nulla. Mauris quis euismod dui, ac eleifend turpis. Donec placerat ac nisi id commodo. Sed congue nunc et consectetur vestibulum. Aliquam vel porttitor libero, vel porttitor metus. Nullam id euismod massa. Donec sem nunc, congue quis quam eget, pellentesque gravida metus. Cras accumsan placerat augue eu gravida. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce maximus ultricies posuere. Phasellus sed est a felis semper euismod. Praesent vel vulputate mi, ac dapibus purus.</p>
+                </div>
+                <div class="c-tab__item">
+                  <p>Aliquam et fringilla lacus. Nam lobortis ante ante, sed dictum nisi egestas auctor. Maecenas in vulputate odio. Etiam sed consectetur est. Proin ut laoreet nisi, non suscipit nisl. Donec pellentesque odio ornare lobortis porttitor. Morbi ut lacus aliquam, porttitor turpis eget, laoreet velit. Aenean massa enim, hendrerit id elit quis, posuere posuere tortor.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="c-popup__footer">
+            Footer
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <div class="c-popup__inner">
-          <p>Morbi laoreet purus ex, iaculis tincidunt sapien porta vitae. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla a metus at enim viverra dictum vel vel eros. Pellentesque ultrices mauris ligula, sit amet efficitur libero commodo eget. Vivamus eros quam, consectetur condimentum placerat id, ultricies nec neque. Cras bibendum ex faucibus sapien sagittis condimentum. Morbi non lectus quis velit commodo lacinia. Cras magna lectus, fringilla id commodo quis, vestibulum in leo. Donec posuere, lorem vitae iaculis luctus, elit libero suscipit purus, ut faucibus nisi leo et tortor. Praesent laoreet tortor ex, et euismod nulla ultricies eu. Nam at velit imperdiet, tincidunt ligula faucibus, malesuada justo.</p>
+  <div class="c-popup c-popup--external-scroll">
+    <input class="c-popup__input" type="checkbox" name="c-popup" id="c-popup-2">
 
-          <div class="c-tab _c-tab--flex-tabs _c-tab--equal-width-tabs">
-            <input id="c-tab-1-1" class="c-tab__input" name="c-tab-1" type="radio" checked="checked">
-            <input id="c-tab-1-2" class="c-tab__input" name="c-tab-1" type="radio">
-            <input id="c-tab-1-3" class="c-tab__input" name="c-tab-1" type="radio">
+    <div class="c-popup__self">
+      <div class="c-popup__container">
+        <label for="c-popup-2" class="c-popup__overlay"></label>
 
-            <div class="c-tab__labels">
-              <label for="c-tab-1-1" class="c-tab__label">Tab 1</label>
-              <label for="c-tab-1-2" class="c-tab__label">Tab 2</label>
-              <label for="c-tab-1-3" class="c-tab__label">Tab 3</label>
+        <div class="c-popup__body">
+          <div class="c-popup__header">
+            <div class="c-popup__title">
+              Some Title
             </div>
 
-            <div class="c-tab__items">
-              <div class="c-tab__item">
-                <p>Vestibulum fermentum ipsum eget lectus vulputate, ut sodales velit auctor. Donec vel justo arcu. Morbi interdum nisi quis ipsum scelerisque egestas. Vivamus quis lorem fermentum, suscipit eros at, tempus ligula. Integer non vulputate nibh. In hac habitasse platea dictumst. Aliquam quis lacinia ex.</p>
-              </div>
-              <div class="c-tab__item">
-                <p>Vivamus pretium nunc magna, sit amet imperdiet felis elementum non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin leo lectus, auctor vitae rutrum vitae, iaculis eleifend justo. Suspendisse sodales eleifend leo. Phasellus ex tellus, convallis sed luctus a, tempus aliquam velit. Sed nec velit felis. In eu mi at erat dictum finibus. Fusce vel dolor massa. Proin congue eget nunc at rutrum. Aliquam pulvinar molestie bibendum. Duis malesuada metus vitae nulla pulvinar vestibulum.</p>
-              </div>
-              <div class="c-tab__item">
-                <p>Cras nec diam vel libero consectetur tincidunt. Aenean aliquam quis eros viverra elementum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque auctor lobortis felis lobortis suscipit. Vestibulum volutpat aliquam elit, in tincidunt quam eleifend ut. Maecenas finibus lacus sed semper molestie. Proin varius tortor eros, vitae elementum risus semper eget. Proin eu ornare diam, vitae laoreet tortor. Sed est ante, sagittis ac venenatis ac, mollis nec dolor. In convallis placerat erat, sodales rutrum est ornare mattis. Donec venenatis urna est, nec elementum justo convallis id.</p>
-              </div>
-            </div>
+            <label for="c-popup-2" class="c-popup__close">
+              <?xml version="1.0" encoding="iso-8859-1"?>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 357 357">
+                <path d="M357 35.7L321.3 0 178.5 142.8 35.7 0 0 35.7l142.8 142.8L0 321.3 35.7 357l142.8-142.8L321.3 357l35.7-35.7-142.8-142.8z"/>
+              </svg>
+            </label>
           </div>
 
-          <p>Cras semper erat ut blandit fermentum. Integer sit amet neque lorem. Cras ex nisi, dictum sit amet iaculis ac, feugiat vitae justo. In mattis finibus neque eget blandit. Morbi ultricies pharetra elit, eget semper augue auctor eget. In at tortor odio. Fusce quis mi cursus, rhoncus lectus vel, tristique sapien. Phasellus ornare ac purus non ullamcorper. Mauris ut lacus elementum, egestas tellus in, molestie est. Sed eu felis justo. Aenean id velit iaculis massa tempus semper eget vitae risus.</p>
-
-          <div class="c-tab _c-tab--flex-tabs _c-tab--equal-width-tabs">
-            <input id="c-tab-2-1" class="c-tab__input" name="c-tab-2" type="radio" checked="checked">
-            <input id="c-tab-2-2" class="c-tab__input" name="c-tab-2" type="radio">
-            <input id="c-tab-2-3" class="c-tab__input" name="c-tab-2" type="radio">
-
-            <div class="c-tab__labels">
-              <label for="c-tab-2-1" class="c-tab__label">Tab 1</label>
-              <label for="c-tab-2-2" class="c-tab__label">Tab 2</label>
-              <label for="c-tab-2-3" class="c-tab__label">Tab 3</label>
-            </div>
-
-            <div class="c-tab__items">
-              <div class="c-tab__item">
-                <p>Phasellus ultrices ullamcorper dui, eu vehicula nisi lacinia at. Fusce tempor turpis ut porta suscipit. Morbi consequat, metus sed vestibulum tempor, augue erat pharetra libero, sed vulputate velit risus sit amet purus. Nunc vel lectus eu velit bibendum convallis. Maecenas auctor lacinia ipsum, aliquam finibus augue laoreet nec. Pellentesque venenatis tempor lacus, quis lacinia orci convallis vitae. Donec vel libero non mauris auctor mattis. Etiam in convallis elit. Nam libero arcu, euismod id rutrum quis, sollicitudin vel dolor. Aliquam sem velit, faucibus et neque nec, sollicitudin pulvinar dolor. Sed et massa ac quam eleifend convallis facilisis sit amet enim. Pellentesque scelerisque porttitor ligula, sit amet consectetur sapien cursus a.</p>
-                <p>Morbi laoreet purus ex, iaculis tincidunt sapien porta vitae. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla a metus at enim viverra dictum vel vel eros. Pellentesque ultrices mauris ligula, sit amet efficitur libero commodo eget. Vivamus eros quam, consectetur condimentum placerat id, ultricies nec neque. Cras bibendum ex faucibus sapien sagittis condimentum. Morbi non lectus quis velit commodo lacinia. Cras magna lectus, fringilla id commodo quis, vestibulum in leo. Donec posuere, lorem vitae iaculis luctus, elit libero suscipit purus, ut faucibus nisi leo et tortor. Praesent laoreet tortor ex, et euismod nulla ultricies eu. Nam at velit imperdiet, tincidunt ligula faucibus, malesuada justo.</p>
-              </div>
-              <div class="c-tab__item">
-                <p>Proin pellentesque venenatis massa, at varius erat tempor at. In ultricies id risus eget pulvinar. Donec in placerat libero. Vestibulum blandit in magna mollis tincidunt. Ut porta, ipsum nec mattis molestie, neque quam scelerisque ante, nec sodales quam purus a urna. Ut a tempus tortor, a convallis erat. Fusce a lorem ligula. Suspendisse interdum dolor vel gravida elementum. Nam scelerisque sapien facilisis diam maximus, ut tempus nisi ullamcorper. Curabitur eu mi ac mauris tristique scelerisque. Fusce dictum tortor sit amet tellus eleifend, quis vehicula justo imperdiet. Suspendisse ultricies dolor id metus congue, hendrerit elementum urna vestibulum. Donec auctor lacinia tellus in tristique.</p>
-                <p>Cras semper erat ut blandit fermentum. Integer sit amet neque lorem. Cras ex nisi, dictum sit amet iaculis ac, feugiat vitae justo. In mattis finibus neque eget blandit. Morbi ultricies pharetra elit, eget semper augue auctor eget. In at tortor odio. Fusce quis mi cursus, rhoncus lectus vel, tristique sapien. Phasellus ornare ac purus non ullamcorper. Mauris ut lacus elementum, egestas tellus in, molestie est. Sed eu felis justo. Aenean id velit iaculis massa tempus semper eget vitae risus.</p>
-              </div>
-              <div class="c-tab__item">
-                <p>Ut sed nulla sodales, vestibulum tellus et, interdum lorem. Nullam fringilla dictum ex in laoreet. Phasellus id sodales neque, sit amet tristique libero. Curabitur vulputate rhoncus vestibulum. Donec placerat elit ex. Donec ac tortor sit amet purus porta hendrerit quis vel purus. In finibus rhoncus arcu, eu auctor ante consectetur at. Sed pulvinar purus quis accumsan vulputate. Suspendisse aliquet purus faucibus metus sagittis dignissim vitae quis nisi. Sed velit magna, lacinia sed felis eu, pulvinar sodales odio. Sed molestie sapien vitae posuere convallis. Sed semper ante eu tellus hendrerit ullamcorper. Quisque nulla justo, egestas non dui vel, lobortis sollicitudin turpis.</p>
-                <p>Integer congue ut elit varius eleifend. Cras finibus, ipsum pulvinar feugiat commodo, ex purus tempor erat, et lobortis diam odio quis velit. Vivamus fermentum molestie quam, non consequat nibh elementum quis. Donec vel mollis dui. Integer sed feugiat lacus. Sed fermentum vulputate sem ut tincidunt. Phasellus venenatis sagittis velit, at convallis odio tincidunt eu. Mauris nec ipsum ac erat scelerisque auctor. Sed vel eros ex.</p>
-              </div>
-            </div>
+          <div class="c-popup__inner">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin, nisi ac sodales vestibulum, ipsum ex tempus ex, non consectetur elit mi in leo. Duis eget mauris at erat ultricies porttitor. Duis hendrerit sed tellus at scelerisque. Vestibulum in ligula ut lectus accumsan rutrum. Donec feugiat, ipsum eu facilisis volutpat, velit quam finibus mi, eu faucibus nulla mi quis mauris. Suspendisse scelerisque vitae leo dignissim porttitor. Integer et malesuada sapien, eu elementum sapien. Sed consectetur neque nec sem hendrerit interdum. Nunc sit amet sollicitudin arcu, non feugiat libero. Nulla nec maximus nibh.</p>
+            <p>Morbi fringilla nisl erat, quis sodales lectus malesuada in. Cras euismod dignissim justo ac egestas. Nulla facilisi. Sed dictum sed tortor eu tempor. Sed porta pulvinar metus vitae semper. Proin sed enim vel justo luctus venenatis in et lorem. Pellentesque auctor porta leo lacinia euismod. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <p>Donec ac ultrices sem. Quisque eget volutpat tortor. Suspendisse nisi massa, blandit vitae nisl quis, ornare posuere ex. Aliquam vehicula augue dolor, vel auctor leo dictum non. Vestibulum ultrices ac eros vel vehicula. Proin pellentesque ornare dolor, et pharetra velit lobortis ut. Vestibulum felis leo, iaculis euismod euismod non, bibendum sit amet nunc.</p>
+            <p>Nullam sollicitudin magna nec enim viverra, in aliquet massa tristique. Proin semper sit amet velit sit amet pellentesque. Maecenas sodales orci id lobortis rutrum. Duis dolor dolor, dictum a nisl eget, consequat aliquet nisl. Fusce non ligula vel leo commodo aliquam. Sed pharetra risus orci, eget sollicitudin lorem rutrum nec. Donec dapibus purus a rutrum rutrum. Nunc hendrerit, turpis vitae tristique sollicitudin, mauris sem vehicula nibh, in luctus massa augue sed enim. Vestibulum nulla turpis, imperdiet vel tempor et, condimentum ac felis. Nam ut augue vitae massa laoreet congue. Proin vitae luctus quam. Phasellus ultrices finibus bibendum. Proin at ex id nisl convallis consequat. Morbi at lobortis nibh. Mauris commodo porta mollis. Quisque dignissim ipsum erat, id venenatis nunc aliquam sed.</p>
+            <p>Morbi nec auctor dolor. Praesent venenatis suscipit mi, ut bibendum elit elementum feugiat. Nulla facilisi. Donec sodales nibh at orci semper finibus. Nullam fringilla ante arcu, sit amet pulvinar nisl ultricies eget. Maecenas consectetur pulvinar placerat. Integer enim mauris, fermentum non magna in, ornare pretium enim.</p>
+            <p>Proin lorem enim, pharetra eget urna eu, scelerisque pretium nunc. Integer placerat dictum faucibus. Nunc commodo urna ac augue aliquam, quis placerat velit lobortis. Maecenas sit amet mauris justo. Aliquam condimentum lacus vitae ultricies aliquam. Phasellus nulla nisl, maximus a felis ut, placerat faucibus enim. Pellentesque ornare diam mi, vel tristique justo luctus in. Nam purus nulla, lobortis vel suscipit sed, rhoncus sit amet risus. Suspendisse ut purus fermentum lorem varius ultricies ut ut nisi. Donec et sagittis diam. Curabitur eget ornare est. Duis vulputate venenatis mauris sit amet auctor. Morbi ultrices ante eget massa hendrerit, ac venenatis ipsum elementum. Curabitur pulvinar dolor id lorem ornare euismod.</p>
+            <p>In hac habitasse platea dictumst. Curabitur aliquam urna eget nisi semper lobortis sit amet sed eros. Praesent sed aliquet metus. Quisque at sodales dui. Quisque lorem risus, sollicitudin at lobortis eleifend, pretium a ante. Vivamus at ligula eu risus semper ullamcorper. Etiam volutpat nibh ut sollicitudin vulputate. In hac habitasse platea dictumst. Maecenas gravida tellus vitae hendrerit dapibus. In hac habitasse platea dictumst. Vestibulum facilisis dignissim nisl, ac tincidunt tellus accumsan nec.</p>
+            <p>Phasellus eleifend vestibulum erat, id varius lectus eleifend a. Maecenas gravida libero nec quam aliquet, eget consectetur diam consequat. Maecenas vestibulum porta suscipit. Aenean quis ligula id ipsum convallis pretium quis id tellus. Nunc ultricies nisi ut rutrum maximus. Fusce non lorem ante. Vivamus laoreet at elit vel tempor. Curabitur viverra sem vitae massa pulvinar eleifend. Aenean tempus risus quis tristique dapibus. Nunc orci mauris, porttitor vel velit sit amet, condimentum facilisis purus. In fermentum elementum eros, nec tincidunt purus fermentum quis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+            <p>Pellentesque magna dolor, ultricies ut dui ac, pellentesque pretium elit. Curabitur ac consequat diam, sed vulputate orci. Vestibulum id sapien efficitur, cursus lacus ut, hendrerit urna. Donec vel vestibulum mi, vel rhoncus ante. Phasellus ac sapien at massa fringilla finibus eget eu nunc. Duis arcu magna, elementum et dictum nec, accumsan nec sem. Donec eu finibus ligula. Cras ac bibendum enim. In at egestas leo. Sed dapibus neque aliquam, tincidunt urna vitae, fringilla sapien. Sed nibh nulla, suscipit nec iaculis a, tincidunt a turpis. Fusce ultrices id ipsum et pharetra. Sed finibus quis enim et auctor. Nullam volutpat interdum consequat.</p>
+            <p>Nam est tellus, venenatis id ante id, bibendum suscipit sapien. Curabitur urna turpis, commodo ut lacus bibendum, lobortis maximus elit. Pellentesque lectus massa, laoreet pellentesque turpis eu, sollicitudin porta quam. Sed scelerisque pharetra ex, nec aliquet quam vulputate et. Phasellus pellentesque diam id odio viverra euismod. Donec auctor vitae arcu nec porta. Donec quis lacinia lectus, ut iaculis dolor. Aliquam ac est sit amet orci gravida vestibulum convallis nec nunc. Quisque finibus nulla purus, pellentesque tincidunt eros vulputate id. Sed mollis sem massa, feugiat sodales quam fermentum eget. Duis pellentesque nibh velit, vitae tincidunt massa egestas at. Etiam finibus urna et tempor ornare.</p>
+            <p>Sed lobortis libero lectus, id laoreet lectus placerat eu. Integer lobortis lobortis eros ut luctus. Sed finibus ipsum eu dolor laoreet, ut dapibus enim sollicitudin. Nullam sodales commodo nisi vel fringilla. Aliquam blandit, felis eu congue ullamcorper, massa enim aliquet ipsum, in maximus ipsum ex ac quam. Morbi consequat, mi et viverra bibendum, ex eros mollis ante, sed sagittis nisi risus vitae libero. Donec dapibus velit dignissim tellus ornare, sed scelerisque magna mattis. Ut ante mi, vulputate sed lacus ac, porttitor vestibulum neque. Vestibulum molestie, urna sit amet consectetur fermentum, mi lacus pellentesque ligula, vitae rhoncus lorem quam sed nisi. Morbi ut turpis et ligula finibus imperdiet. Quisque in turpis sed mauris rhoncus vestibulum at id felis. Sed vulputate ipsum aliquet laoreet suscipit. Phasellus ullamcorper ullamcorper metus et mollis. Integer id felis ut massa convallis efficitur.</p>
+            <p>Integer lorem arcu, dictum vitae enim et, convallis vestibulum ex. Nunc fermentum metus vel justo aliquet tristique. Aliquam blandit, arcu at tempus malesuada, nunc lacus interdum orci, imperdiet interdum dui orci at erat. Nullam id est ut ante posuere tempus. Fusce imperdiet commodo semper. Etiam dui nibh, volutpat et varius in, tristique et dolor. Cras convallis mi orci, molestie condimentum risus finibus vel.</p>
+            <p>Aliquam scelerisque mauris nunc, iaculis semper nisi accumsan at. Proin cursus nibh quam, in faucibus lacus dictum convallis. Morbi lobortis, sapien eu volutpat dapibus, quam ipsum eleifend odio, sed interdum sapien elit ut nunc. Aliquam elementum gravida nibh sed tincidunt. Fusce erat nulla, faucibus ac efficitur quis, blandit in ipsum. Ut dolor est, imperdiet id sagittis a, dictum id erat. Suspendisse ante libero, venenatis eget tempor non, rutrum vel leo. Phasellus efficitur nec lorem ac semper. Fusce sed pulvinar ante. Duis felis odio, eleifend sit amet nulla non, vehicula maximus ante. Sed ut efficitur massa. Suspendisse tincidunt orci sed orci tempus condimentum. Curabitur lacinia sollicitudin ornare. Ut lobortis aliquet interdum.</p>
+            <p>Phasellus vel venenatis purus. In non magna est. Vivamus vel dolor sapien. Pellentesque placerat, velit id venenatis feugiat, nisi mauris egestas lacus, ac placerat sapien dui at diam. Etiam id viverra lectus, ac porttitor tortor. Fusce bibendum quam ex, eget lacinia risus tempor sit amet. Aliquam iaculis sem neque, placerat egestas libero mollis nec. Vestibulum rhoncus ligula sed ornare bibendum. Curabitur ut ullamcorper ante, ut vehicula magna. Suspendisse eu felis viverra, gravida urna sit amet, vehicula sem.</p>
           </div>
 
-          <p>Nam volutpat tellus in pretium lobortis. Nam eget lacinia tellus, eu feugiat quam. Maecenas eget finibus nisl. Vestibulum laoreet egestas libero quis mollis. Nam sit amet sagittis risus. Nulla congue volutpat est et eleifend. Vestibulum mattis augue eu odio rhoncus posuere. Phasellus sed magna ac ligula euismod rutrum. Sed nec erat efficitur, auctor nisi quis, tincidunt mi. Aliquam sit amet iaculis sem. Maecenas pulvinar est sem, nec cursus tellus ultricies at. Sed imperdiet dolor ex, vitae rutrum neque aliquet at.</p>
-
-          <div class="c-tab _c-tab--flex-tabs _c-tab--equal-width-tabs">
-            <input id="c-tab-3-1" class="c-tab__input" name="c-tab-3" type="radio" checked="checked">
-            <input id="c-tab-3-2" class="c-tab__input" name="c-tab-3" type="radio">
-            <input id="c-tab-3-3" class="c-tab__input" name="c-tab-3" type="radio">
-
-            <div class="c-tab__labels">
-              <label for="c-tab-3-1" class="c-tab__label">Tab 1</label>
-              <label for="c-tab-3-2" class="c-tab__label">Tab 2</label>
-              <label for="c-tab-3-3" class="c-tab__label">Tab 3</label>
-            </div>
-
-            <div class="c-tab__items">
-              <div class="c-tab__item">
-                <p>Ut suscipit dui eu fringilla gravida. Phasellus sollicitudin consectetur lacus, a luctus ex iaculis vel. Integer non fringilla augue. Sed accumsan arcu ac arcu maximus tristique. Quisque vitae massa eu elit tristique tincidunt non a nisi. Nulla porta tempor quam, eget vehicula lectus venenatis id. Nulla eget euismod augue.</p>
-                <p>Nam volutpat tellus in pretium lobortis. Nam eget lacinia tellus, eu feugiat quam. Maecenas eget finibus nisl. Vestibulum laoreet egestas libero quis mollis. Nam sit amet sagittis risus. Nulla congue volutpat est et eleifend. Vestibulum mattis augue eu odio rhoncus posuere. Phasellus sed magna ac ligula euismod rutrum. Sed nec erat efficitur, auctor nisi quis, tincidunt mi. Aliquam sit amet iaculis sem. Maecenas pulvinar est sem, nec cursus tellus ultricies at. Sed imperdiet dolor ex, vitae rutrum neque aliquet at.</p>
-              </div>
-              <div class="c-tab__item">
-                <p>Maecenas ex est, pharetra eu nisi porta, malesuada euismod ex. Cras euismod sapien felis, vel imperdiet orci congue in. Aenean leo ipsum, mollis sit amet diam non, viverra elementum nulla. Mauris quis euismod dui, ac eleifend turpis. Donec placerat ac nisi id commodo. Sed congue nunc et consectetur vestibulum. Aliquam vel porttitor libero, vel porttitor metus. Nullam id euismod massa. Donec sem nunc, congue quis quam eget, pellentesque gravida metus. Cras accumsan placerat augue eu gravida. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce maximus ultricies posuere. Phasellus sed est a felis semper euismod. Praesent vel vulputate mi, ac dapibus purus.</p>
-              </div>
-              <div class="c-tab__item">
-                <p>Aliquam et fringilla lacus. Nam lobortis ante ante, sed dictum nisi egestas auctor. Maecenas in vulputate odio. Etiam sed consectetur est. Proin ut laoreet nisi, non suscipit nisl. Donec pellentesque odio ornare lobortis porttitor. Morbi ut lacus aliquam, porttitor turpis eget, laoreet velit. Aenean massa enim, hendrerit id elit quis, posuere posuere tortor.</p>
-              </div>
-            </div>
+          <div class="c-popup__footer">
+            Footer
           </div>
-        </div>
-
-        <div class="c-popup__footer">
-          Footer
         </div>
       </div>
     </div>
