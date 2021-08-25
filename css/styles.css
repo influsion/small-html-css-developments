@@ -432,17 +432,18 @@ textarea {
   display: grid;
   place-items: center;
   height: 100%;
-  padding: 3rem;
   min-height: 100%;
   position: relative;
 }
 .c-popup__body {
+  --block-size: calc(100% - 2 * 3rem);
   display: flex;
   flex-direction: column;
   z-index: 1;
+  width: var(--block-size);
   max-width: 768px;
   min-height: 10rem;
-  max-height: 100%;
+  max-height: var(--block-size);
   position: relative;
   background-color: #ffffff;
   border-radius: var(--border-radius);
