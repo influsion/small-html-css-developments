@@ -434,7 +434,6 @@ textarea {
   display: grid;
   place-items: center;
   height: 100%;
-  padding: 3rem;
   min-height: 100vh;
   position: relative;
 }
@@ -477,9 +476,6 @@ textarea {
   cursor: pointer;
   font-size: 2rem;
   position: absolute;
-}
-.c-popup--external-scroll .c-popup__inner {
-  overflow: unset;
 }
 .c-popup--external-scroll .c-popup__container {
   height: unset;
