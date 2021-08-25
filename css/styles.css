@@ -477,6 +477,9 @@ textarea {
   font-size: 2rem;
   position: absolute;
 }
+.c-popup--external-scroll .c-popup__inner {
+  overflow: unset;
+}
 .c-popup--external-scroll .c-popup__self {
   overflow-x: hidden;
   overflow-y: auto;
