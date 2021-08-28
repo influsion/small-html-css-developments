@@ -496,12 +496,14 @@ textarea {
 }
 .c-popup--external-scroll .c-popup__header {
   background-color: var(--white);
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 .c-popup--external-scroll .c-popup__footer {
   background-color: var(--white);
+  position: -webkit-sticky;
   position: sticky;
   bottom: 0;
   border-radius: 0 0 var(--border-radius) var(--border-radius);
