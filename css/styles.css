@@ -427,7 +427,6 @@ textarea {
   z-index: 0;
   display: block;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.65);
 }
 .c-modal__container {
   top: 0;
@@ -437,6 +436,7 @@ textarea {
   z-index: 100;
   display: none;
   position: fixed;
+  background-color: rgba(0, 0, 0, 0.65);
 }
 .c-modal__inner {
   display: grid;
