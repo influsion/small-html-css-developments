@@ -5,11 +5,16 @@ $r: ".c-popup";
 // block
 //-----------------------------------------------------------
 #{$r} {
-  --c-popup-gap: 3rem;
+  --gap: 0rem;
+  --radius: 0px;
+
+  @media (min-width: $min-768) {
+    --gap: 3rem;
+    --radius: var(--border-radius);
+  }
 
   // element
   //---------------------------------------------------------
-
 
   &__input {
     width: 0;
@@ -18,7 +23,7 @@ $r: ".c-popup";
     position: absolute;
 
     &:checked {
-      ~ #{$r}__self {
+      ~ #{$r}__container {
         display: block;
       }
     }
@@ -35,7 +40,7 @@ $r: ".c-popup";
     background-color: rgba(0, 0, 0, 0.65);
   }
 
-  &__self {
+  &__container {
     top: 0;
     left: 0;
     right: 0;
@@ -45,7 +50,7 @@ $r: ".c-popup";
     position: fixed;
   }
 
-  &__container {
+  &__inner {
     display: grid;
     place-items: center;
     height: 100%;
@@ -54,25 +59,25 @@ $r: ".c-popup";
   }
 
   &__body {
-    --block-size: calc(100% - 2 * var(--c-popup-gap));
+    --dimension: calc(100% - 2 * var(--gap));
 
     display: flex;
     flex-direction: column;
     z-index: 1;
-    width: var(--block-size);
+    width: var(--dimension);
     max-width: 768px;
     min-height: 10rem;
-    max-height: var(--block-size);
+    max-height: var(--dimension);
     position: relative;
-    background-color: #ffffff;
-    border-radius: var(--border-radius);
+    background-color: var(--white);
+    border-radius: var(--radius);
   }
 
   &__header {
     padding: 3rem 4rem;
   }
 
-  &__inner {
+  &__main {
     flex-grow: 1;
     width: 100%;
     padding: 0 4rem;
@@ -107,22 +112,38 @@ $r: ".c-popup";
   //---------------------------------------------------------
 
   &--external-scroll {
-    #{$r}__inner {
+    #{$r}__main {
       overflow: unset;
     }
 
-    #{$r}__self {
+    #{$r}__container {
       overflow-x: hidden;
       overflow-y: auto;
     }
 
-    #{$r}__container {
+    #{$r}__inner {
       height: unset;
     }
 
     #{$r}__body {
-      margin: var(--c-popup-gap) 0;
+      margin: var(--gap) 0;
       max-height: unset;
+    }
+
+    #{$r}__header {
+      background-color: var(--white);
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+
+    #{$r}__footer {
+      background-color: var(--white);
+      position: -webkit-sticky;
+      position: sticky;
+      bottom: 0;
+      border-radius: 0 0 var(--radius) var(--radius);
     }
   }
 }
