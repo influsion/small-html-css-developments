@@ -400,19 +400,26 @@ textarea {
 
 /* .c-
 -----------------------------------------------------------*/
-.c-popup {
-  --c-popup-gap: 3rem;
+.c-modal {
+  --gap: 0rem;
+  --radius: 0px;
 }
-.c-popup__input {
+@media (min-width: 768px) {
+  .c-modal {
+    --gap: 3rem;
+    --radius: var(--border-radius);
+  }
+}
+.c-modal__input {
   width: 0;
   height: 0;
   visibility: hidden;
   position: absolute;
 }
-.c-popup__input:checked ~ .c-popup__self {
+.c-modal__input:checked ~ .c-modal__container {
   display: block;
 }
-.c-popup__overlay {
+.c-modal__overlay {
   top: 0;
   left: 0;
   right: 0;
@@ -422,7 +429,7 @@ textarea {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.65);
 }
-.c-popup__self {
+.c-modal__container {
   top: 0;
   left: 0;
   right: 0;
@@ -431,30 +438,30 @@ textarea {
   display: none;
   position: fixed;
 }
-.c-popup__container {
+.c-modal__inner {
   display: grid;
   place-items: center;
   height: 100%;
   min-height: 100%;
   position: relative;
 }
-.c-popup__body {
-  --block-size: calc(100% - 2 * var(--c-popup-gap));
+.c-modal__body {
+  --dimension: calc(100% - 2 * var(--gap));
   display: flex;
   flex-direction: column;
   z-index: 1;
-  width: var(--block-size);
+  width: var(--dimension);
   max-width: 768px;
   min-height: 10rem;
-  max-height: var(--block-size);
+  max-height: var(--dimension);
   position: relative;
   background-color: var(--white);
-  border-radius: var(--border-radius);
+  border-radius: var(--radius);
 }
-.c-popup__header {
+.c-modal__header {
   padding: 3rem 4rem;
 }
-.c-popup__inner {
+.c-modal__main {
   flex-grow: 1;
   width: 100%;
   padding: 0 4rem;
@@ -462,14 +469,14 @@ textarea {
   max-height: 100%;
   overflow-x: hidden;
 }
-.c-popup__footer {
+.c-modal__footer {
   padding: 3rem 4rem;
 }
-.c-popup__title {
+.c-modal__title {
   font-size: 3rem;
   font-weight: 400;
 }
-.c-popup__close {
+.c-modal__close {
   top: 2rem;
   z-index: 1;
   width: 1em;
@@ -480,32 +487,32 @@ textarea {
   font-size: 2rem;
   position: absolute;
 }
-.c-popup--external-scroll .c-popup__inner {
+.c-modal--external-scroll .c-modal__main {
   overflow: unset;
 }
-.c-popup--external-scroll .c-popup__self {
+.c-modal--external-scroll .c-modal__container {
   overflow-x: hidden;
   overflow-y: auto;
 }
-.c-popup--external-scroll .c-popup__container {
+.c-modal--external-scroll .c-modal__inner {
   height: unset;
 }
-.c-popup--external-scroll .c-popup__body {
-  margin: var(--c-popup-gap) 0;
+.c-modal--external-scroll .c-modal__body {
+  margin: var(--gap) 0;
   max-height: unset;
 }
-.c-popup--external-scroll .c-popup__header {
+.c-modal--external-scroll .c-modal__header {
   background-color: var(--white);
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  border-radius: var(--radius) var(--radius) 0 0;
 }
-.c-popup--external-scroll .c-popup__footer {
+.c-modal--external-scroll .c-modal__footer {
   background-color: var(--white);
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
-  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  border-radius: 0 0 var(--radius) var(--radius);
 }
 /*# sourceMappingURL=styles.css.map */
